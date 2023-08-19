@@ -2,6 +2,7 @@
 import mlflow
 # autolog your metrics, parameters, and model
 mlflow.autolog()
+mlflow.set_experiment('catsanddogsexp')
 mlflow.set_tag('logging', 'mlflow.autolog()')
 
 
