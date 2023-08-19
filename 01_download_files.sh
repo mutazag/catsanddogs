@@ -1,10 +1,13 @@
+# login on a compute instance
+az login --identity
+
 # script requires azure cli extension for storage (storage-preview)
 # az extension add --name storage-preview
 
 # set variables:
-resource_group=sina
-account_name=godzillasinastorage
-container_name=datasets
+resource_group=storage
+account_name=godzillastorage
+container_name=catsanddogs
 
 # constants:
 zip_filename=cats_and_dogs_filtered.zip
@@ -14,7 +17,7 @@ full_directory_name=$local_download_dir$data_folder
 echo $full_directory_name
 
 # download and unzip"
-wget https://storage.googleapis.com/mledu-datasets/cats_and_dogs_filtered.zip  -P $local_download_dir
+wget https://storage.googleapis.com/mledu-datasets/cats_and_dogs_filtered.zip -P $local_download_dir
 
 unzip  $local_download_dir$zip_filename -d $local_download_dir
 
