@@ -1,0 +1,19 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+
+command: |
+  echo ${{inputs.hello_string}}
+  ls ${{inputs.data_dir}}
+  ls -l ${{inputs.input_dataset}}
+environment:
+ image: library/python:latest
+compute: azureml:cpucluster
+code: ../src
+inputs:
+  hello_string: "hello world"
+  hello_number: 42
+  data_dir:
+    type: uri_folder 
+    path: azureml://datastores/shared_datastore/paths/cats_and_dogs_filtered/
+  input_dataset:
+    type: uri_folder
+    path: azureml:cats_dogs_v2:1

@@ -1,0 +1,7 @@
+# data-example.yml
+# az ml data create -f data-example.yml
+$schema: https://azuremlschemas.azureedge.net/latest/data.schema.json
+name: cats_dogs_v2
+description: cats and dogs data asset using cli v2
+type: uri_folder
+path: azureml://datastores/shared_datastore_v2/paths/cats_and_dogs_filtered/
